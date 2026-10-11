@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Haven: Design with ease</title>
+  <meta name="description" content="Haven is an AI design studio that grows your ideas the way a meadow grows: effortlessly, in a breeze." />
+  <meta name="theme-color" content="#EEE6E1" />
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/da5e128d-6bfe-41e1-8c86-467e4304c7b0.webp" imagesrcset="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/0987fb8f-3804-40ee-9cd3-f776312d18d7.webp 1280w, https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/da5e128d-6bfe-41e1-8c86-467e4304c7b0.webp 1920w" imagesizes="100vw" fetchpriority="high" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- Edge botanicals: decorative, drawn and swayed in code -->
+  <div class="edges" aria-hidden="true">
+    <svg class="edge edge--left" viewBox="0 0 120 1000" preserveAspectRatio="xMinYMax meet">
+      <g class="stem" data-base="18 1000"><g class="bend"><path d="M18 1000 C 22 860, 10 760, 26 640 S 30 470, 22 380" /></g></g>
+      <g class="stem" data-base="34 1000"><g class="bend"><path d="M34 1000 C 36 900, 48 820, 44 720 S 52 600, 64 540" /><path d="M44 720 C 56 700, 66 690, 76 668" /></g></g>
+      <g class="stem" data-base="12 1000"><g class="bend"><path d="M12 1000 C 10 930, 4 880, 14 800 S 12 700, 8 650" /></g></g>
+      <g class="stem stem--frond" data-base="52 1000"><g class="bend">
+        <path d="M52 1000 C 54 920, 58 860, 70 780 S 84 660, 80 560 S 74 470, 86 410" />
+        <path d="M66 800 C 54 790, 46 778, 40 760" /><path d="M70 780 C 84 774, 92 762, 98 746" />
+        <path d="M76 700 C 64 690, 56 676, 52 660" /><path d="M80 680 C 92 672, 100 660, 104 644" />
+        <path d="M80 600 C 70 592, 64 580, 62 566" /><path d="M81 586 C 92 578, 98 568, 100 554" />
+        <path d="M78 510 C 70 502, 66 492, 66 482" /><path d="M80 498 C 88 490, 92 482, 94 470" />
+        <path d="M86 410 C 92 404, 94 398, 92 390 C 88 384, 82 388, 84 394" />
+      </g></g>
+    </svg>
+    <svg class="edge edge--right" viewBox="0 0 120 1000" preserveAspectRatio="xMaxYMax meet">
+      <g class="stem" data-base="96 1000"><g class="bend">
+        <path d="M96 1000 C 92 880, 104 780, 94 660 S 82 520, 90 430" />
+        <g class="puff">
+          <path d="M90 430 L 90 404" /><path d="M90 430 L 108 412" /><path d="M90 430 L 114 430" /><path d="M90 430 L 108 448" />
+          <path d="M90 430 L 72 412" /><path d="M90 430 L 66 430" /><path d="M90 430 L 72 448" /><path d="M90 430 L 80 406" /><path d="M90 430 L 100 406" />
+        </g>
+      </g></g>
+      <g class="stem" data-base="108 1000"><g class="bend"><path d="M108 1000 C 110 920, 100 860, 106 780 S 114 680, 104 620" /></g></g>
+      <g class="stem" data-base="82 1000"><g class="bend"><path d="M82 1000 C 80 950, 86 900, 78 840 S 70 770, 76 730" /></g></g>
+    </svg>
+    <div class="seeds"></div>
+  </div>
+
+  <div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"></span></div>
+
+  <header class="nav" data-nav>
+    <a class="nav__logo" href="#top" aria-label="Haven, home">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22V9M12 9c0-3.5 2.5-6 6-6 0 3.5-2.5 6-6 6Zm0 4c0-3-2.2-5.5-5.5-5.5 0 3 2.2 5.5 5.5 5.5Z" /></svg>
+      <span>Haven</span>
+    </a>
+    <nav class="nav__pill" aria-label="Main">
+      <a href="#seed" class="is-active">About</a>
+      <a href="#grow">Process</a>
+      <a href="#features">Features</a>
+      <a href="#quote">Stories</a>
+      <a href="#footer">Contact</a>
+    </nav>
+    <a class="btn btn--nav magnetic" href="#footer"><span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" /></svg></span><span class="btn__label">Start designing</span></a>
+  </header>
+
+  <main id="main">
+    <!-- 1 · HERO · morning -->
+    <section class="hero" id="top" data-bg="#EEE6E1">
+      <div class="hero__media">
+        <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/da5e128d-6bfe-41e1-8c86-467e4304c7b0.webp" aria-hidden="true">
+          <source src="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/ea00fbaf-2a99-49ca-b3ac-bf971864b6dd.mp4" type="video/mp4" media="(max-width: 900px)" />
+          <source src="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/63c02068-446e-445f-b796-974376766ff1.mp4" type="video/mp4" />
+        </video>
+        <img class="hero__poster" src="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/da5e128d-6bfe-41e1-8c86-467e4304c7b0.webp" srcset="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/0987fb8f-3804-40ee-9cd3-f776312d18d7.webp 1280w, https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/da5e128d-6bfe-41e1-8c86-467e4304c7b0.webp 1920w" sizes="100vw" alt="" fetchpriority="high" />
+        <div class="hero__veil"></div>
+      </div>
+      <div class="hero__content">
+        <p class="eyebrow hero__eyebrow">AI design studio — Season 02</p>
+        <h1 class="hero__title split-hero">Design with <em>ease.</em></h1>
+        <p class="hero__sub">Design smarter with AI that understands you.<br />So you can take a breath.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--light magnetic" href="#footer"><span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" /></svg></span><span class="btn__label">Start designing</span></a>
+          <a class="link-quiet" href="#grow">Watch it grow</a>
+        </div>
+      </div>
+      <div class="hero__foot">
+        <p class="hero__note">Haven reads intent the way wind reads a field: lightly, and everywhere at once.</p>
+        <a class="hero__scroll" href="#seed"><span>Scroll to walk in</span><i aria-hidden="true"></i></a>
+      </div>
+    </section>
+
+    <!-- 2 · SEED · mist -->
+    <section class="seed" id="seed" data-bg="#EEE6E1">
+      <div class="seed__copy">
+        <p class="eyebrow">01 — The seed</p>
+        <h2 class="h2 split">Every great design starts as a <em>seed.</em></h2>
+        <p class="body fade-up">Describe a feeling, not a spec. Haven turns a single sentence into a first living layout in seconds, then keeps it growing as you talk to it.</p>
+        <a class="btn btn--dark magnetic fade-up" href="#grow"><span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" /></svg></span><span class="btn__label">See how it grows</span></a>
+      </div>
+      <figure class="seed__figure reveal">
+        <div class="reveal__inner">
+          <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/0d0c5563-b260-45be-b9fb-c3de0bba9c1a.webp" srcset="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/ab2c41bf-535d-4a6c-9cb2-5001533ad330.webp 800w, https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/0d0c5563-b260-45be-b9fb-c3de0bba9c1a.webp 1600w" sizes="(max-width: 900px) 92vw, 46vw" width="1600" height="2000" alt="A dandelion seed head letting its seeds go in a soft breeze" loading="lazy" decoding="async" />
+        </div>
+      </figure>
+    </section>
+
+    <!-- 3 · STATEMENT · mist → dawn -->
+    <section class="statement" data-bg="#F1E2D8">
+      <figure class="statement__figure reveal">
+        <div class="reveal__inner">
+          <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/88208676-dbd7-4988-a469-559c2a256479.webp" srcset="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/8a42eef5-b16e-40fe-a328-c2bd90d7eeb5.webp 800w, https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/88208676-dbd7-4988-a469-559c2a256479.webp 1600w" sizes="(max-width: 900px) 70vw, 30vw" width="1600" height="2140" alt="Backlit violet cranesbill and orange poppy petals" loading="lazy" decoding="async" />
+        </div>
+      </figure>
+      <p class="statement__text statement__text--left fill">Meet Haven. Built to grow your ideas and let them breathe.</p>
+      <p class="statement__text statement__text--right fill">AI works like a breeze. You set the direction; it handles the thousand small movements.</p>
+    </section>
+
+    <!-- 4 · HOW DESIGN GROWS · pinned horizontal -->
+    <section class="grow" id="grow" data-bg="#F2D9CA" aria-label="How design grows with Haven">
+      <div class="grow__pin">
+        <div class="grow__head">
+          <p class="eyebrow">02 — How design grows</p>
+          <p class="grow__count" aria-hidden="true"><span class="grow__current">01</span> / 04</p>
+        </div>
+        <div class="grow__track">
+          <svg class="grow__stem" viewBox="0 0 4000 200" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0 150 C 300 150, 400 60, 700 80 S 1100 170, 1400 120 S 1900 40, 2200 90 S 2700 170, 3000 110 S 3600 50, 4000 100" />
+          </svg>
+          <article class="stage stage--intro">
+            <h2 class="h2 split">Design doesn't get built. It <em>grows.</em></h2>
+            <p class="body">Four seasons, one conversation. Scroll to walk through them.</p>
+          </article>
+          <article class="stage">
+            <figure class="stage__figure reveal-x"><div class="reveal__inner"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/c0af0afe-8e1b-4886-830e-39eb64f2ec5d.webp" srcset="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/d479c0a3-0d80-4b15-bf75-a389d0f66970.webp 800w, https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/c0af0afe-8e1b-4886-830e-39eb64f2ec5d.webp 1600w" sizes="(max-width: 900px) 92vw, 28vw" width="1600" height="2000" alt="A tiny green sprout rising from dark soil" loading="lazy" decoding="async" /></div></figure>
+            <div class="stage__copy"><p class="eyebrow">01 · Plant</p><h3 class="h3">Say it plainly.</h3><p class="body">"Calm, editorial, a little warm." That's a brief. Haven listens for intent, not keywords.</p></div>
+          </article>
+          <article class="stage">
+            <figure class="stage__figure reveal-x"><div class="reveal__inner"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/c949feea-f2ad-4d58-83ca-949ea2ccce70.webp" srcset="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/8ad67b5a-b37b-479a-b692-80faed8ab1b0.webp 800w, https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/c949feea-f2ad-4d58-83ca-949ea2ccce70.webp 1600w" sizes="(max-width: 900px) 92vw, 28vw" width="1600" height="2000" alt="A young fern frond unfurling in morning light" loading="lazy" decoding="async" /></div></figure>
+            <div class="stage__copy"><p class="eyebrow">02 · Grow</p><h3 class="h3">Watch it take shape.</h3><p class="body">Layouts unfurl in real time: grids, rhythm and hierarchy settle where they want to be.</p></div>
+          </article>
+          <article class="stage">
+            <figure class="stage__figure reveal-x"><div class="reveal__inner"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/d4b33295-2c39-4e8c-82fe-ad4e5d03623e.webp" srcset="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/09a281de-4dfb-4637-b5ac-9078c5a04f60.webp 800w, https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/d4b33295-2c39-4e8c-82fe-ad4e5d03623e.webp 1600w" sizes="(max-width: 900px) 92vw, 28vw" width="1600" height="2000" alt="An orange poppy in full bloom, backlit by low sun" loading="lazy" decoding="async" /></div></figure>
+            <div class="stage__copy"><p class="eyebrow">03 · Bloom</p><h3 class="h3">Make it yours.</h3><p class="body">Your colours, your type, your voice. Haven learns your brand and keeps it in season.</p></div>
+          </article>
+          <article class="stage">
+            <figure class="stage__figure reveal-x"><div class="reveal__inner"><img src="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/a9a8b454-845e-4843-b5ca-5d714f35dd95.webp" srcset="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/40f57b74-db2e-4a2a-a5bd-ffc7b31857a5.webp 800w, https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/a9a8b454-845e-4843-b5ca-5d714f35dd95.webp 1600w" sizes="(max-width: 900px) 92vw, 28vw" width="1600" height="2000" alt="Tall meadow grasses bending in a soft wind" loading="lazy" decoding="async" /></div></figure>
+            <div class="stage__copy"><p class="eyebrow">04 · Breeze</p><h3 class="h3">Let it move.</h3><p class="body">Motion, responsive states and handoff, done in one breath. Ship it, then go outside.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 · FEATURES GRID · dawn → sand -->
+    <section class="features" id="features" data-bg="#EFDFCF">
+      <div class="features__head">
+        <p class="eyebrow">03 — In the toolkit</p>
+        <h2 class="h2 split">Everything you need. Nothing that <em>rustles.</em></h2>
+      </div>
+      <div class="bento">
+        <article class="card card--light card--a">
+          <p class="card__num">01</p>
+          <div>
+            <h3 class="h3">Understands you</h3>
+            <p class="body">A unified layer between how you talk and what gets made. Mood, references and constraints become one clear direction.</p>
+          </div>
+          <div class="card__foot"><span>From a sentence to a system</span><a class="arrow magnetic" href="#footer" aria-label="Start with a sentence"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" /></svg></a></div>
+        </article>
+        <article class="card card--dark card--b">
+          <p class="body">Haven keeps your palette, type and spacing in one living source. Change a colour at sunrise and every screen has caught up by noon, without a single broken component.</p>
+          <p class="body body--muted">Brand rules feel less like fences and more like a trellis: structure that helps things climb.</p>
+          <p class="card__big">S/01</p>
+          <h3 class="h3">Breathes with your brand</h3>
+        </article>
+        <article class="card card--media card--c">
+          <video class="card__video lazy-video" muted loop playsinline preload="none" poster="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/727418a5-1751-4067-84e7-d57140fe9d08.webp" aria-hidden="true" data-mp4="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/010444c9-5f68-4283-89b6-c87301c5e952.mp4"></video>
+          <img class="card__poster" src="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/727418a5-1751-4067-84e7-d57140fe9d08.webp" alt="" loading="lazy" decoding="async" />
+          <div class="card__chip"><span>Details that settle like morning dew</span><a class="arrow arrow--light magnetic" href="#grow" aria-label="See the details"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" /></svg></a></div>
+        </article>
+        <article class="card card--light card--d">
+          <p class="card__num">B/03</p>
+          <h3 class="h3">Always in season</h3>
+          <p class="body">Variants for every screen and every mood, grown from one root.</p>
+        </article>
+        <article class="card card--poppy card--e">
+          <p class="card__num">W/04</p>
+          <h3 class="h3">Ship in a breath</h3>
+          <a class="arrow arrow--light magnetic" href="#footer" aria-label="Ship your first design"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" /></svg></a>
+        </article>
+      </div>
+    </section>
+
+    <!-- 6 · GOLDEN HOUR QUOTE -->
+    <section class="quote" id="quote" data-bg="#E6C7A1">
+      <figure class="quote__figure reveal">
+        <div class="reveal__inner">
+          <img src="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/f1be1057-1bd2-4e01-bff8-039b0570c8b1.webp" srcset="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/bd4f7879-042c-4901-95f2-6fe186ede0ca.webp 800w, https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/f1be1057-1bd2-4e01-bff8-039b0570c8b1.webp 1600w, https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/a219f419-3be1-477a-9281-7ecb0459d626.webp 2400w" sizes="94vw" width="2400" height="1357" alt="The meadow at golden hour, low sun behind the hills" loading="lazy" decoding="async" />
+        </div>
+      </figure>
+      <blockquote class="quote__body">
+        <p class="quote__text split">"It feels less like using a tool and more like taking a <em>walk.</em>"</p>
+        <footer class="quote__by"><span class="eyebrow">Lena Okafor</span><span class="eyebrow eyebrow--soft">Design lead, Fieldnote</span></footer>
+      </blockquote>
+    </section>
+  </main>
+
+  <!-- 7 · FOOTER · dusk -->
+  <footer class="footer" id="footer" data-bg="#1A211E">
+    <div class="footer__media">
+      <video class="footer__video lazy-video" muted loop playsinline preload="none" poster="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/572b0c8f-93d6-459b-ae70-71484d228d67.webp" aria-hidden="true" data-mp4="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/d776a159-ab9b-4059-ace4-32ca7f6902ab.mp4"></video>
+      <img class="footer__poster" src="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/572b0c8f-93d6-459b-ae70-71484d228d67.webp" alt="" loading="lazy" decoding="async" />
+      <div class="footer__veil"></div>
+    </div>
+    <div class="footer__content">
+      <p class="eyebrow eyebrow--light">04 — Evening</p>
+      <h2 class="footer__title split">Take a breath.<br /><em>Start designing.</em></h2>
+      <a class="btn btn--light magnetic" href="#top"><span class="btn__icon" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" /></svg></span><span class="btn__label">Plant your first idea</span></a>
+    </div>
+    <div class="footer__bottom">
+      <nav class="footer__links" aria-label="Footer">
+        <a class="ripple" href="#seed">About</a>
+        <a class="ripple" href="#grow">Process</a>
+        <a class="ripple" href="#features">Features</a>
+        <a class="ripple" href="#quote">Stories</a>
+        <a class="ripple" href="#top">Journal</a>
+      </nav>
+      <p class="footer__legal"><span>© 2026 Haven Studio</span><span>Grown slowly, shipped quickly.</span></p>
+    </div>
+  </footer>
+
+  <script src="vendor/gsap.min.js" defer></script>
+  <script src="vendor/ScrollTrigger.min.js" defer></script>
+  <script src="vendor/SplitText.min.js" defer></script>
+  <script src="vendor/lenis.min.js" defer></script>
+  <script src="main.js" defer></script>
+</body>
+</html>
