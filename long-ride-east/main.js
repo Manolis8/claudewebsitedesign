@@ -509,7 +509,7 @@
   const loops = [];
   function timerRange(k, start, stop, pad = 0) {
     const st = ScrollTrigger.create({
-      start: () => Math.max(0, range(k)[0] - pad * VH),
+      start: () => (k === 0 ? -1 : Math.max(0, range(k)[0] - pad * VH)),  // -1 keeps the hero active at scrollY 0
       end: () => (k + 1 < S.length ? range(k)[1] + pad * VH : ScrollTrigger.maxScroll(window) + 10),
       onToggle: self => (self.isActive ? start() : stop()),
     });
