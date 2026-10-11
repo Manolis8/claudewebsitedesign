@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Long Ride East · Alexander the Great</title>
+  <meta name="description" content="A seven-screen paper-collage story of Alexander the Great: how one young Macedonian king turned Greece into an empire stretching to India." />
+  <meta name="theme-color" content="#E6DACB" />
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="preload" href="assets/fonts/cormorant-garamond-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="assets/fonts/fonts.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip" href="#s2">Skip to the story</a>
+
+  <!-- Shared paper filters -->
+  <svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+        <feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#1F100D" flood-opacity=".24" />
+      </filter>
+      <filter id="shadowUp" x="-5%" y="-15%" width="110%" height="130%">
+        <feDropShadow dx="0" dy="-5" stdDeviation="6" flood-color="#1F100D" flood-opacity=".28" />
+      </filter>
+      <filter id="grain" x="0" y="0" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="9" result="n" />
+        <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0.55 0 0 0 -0.2" result="speck" />
+        <feComposite in="speck" in2="SourceGraphic" operator="in" result="speckIn" />
+        <feMerge><feMergeNode in="SourceGraphic" /><feMergeNode in="speckIn" /></feMerge>
+      </filter>
+      <filter id="rough">
+        <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="3" seed="4" result="t" />
+        <feDisplacementMap in="SourceGraphic" in2="t" scale="7" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+      <filter id="cutout" x="-15%" y="-15%" width="130%" height="130%">
+        <feMorphology in="SourceAlpha" operator="dilate" radius="4" result="fat" />
+        <feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="2" seed="2" result="t" />
+        <feDisplacementMap in="fat" in2="t" scale="5" result="roughFat" />
+        <feFlood flood-color="#F9E7D5" />
+        <feComposite in2="roughFat" operator="in" result="border" />
+        <feDropShadow in="border" dx="2" dy="5" stdDeviation="3" flood-color="#1F100D" flood-opacity=".3" result="borderShadow" />
+        <feMerge><feMergeNode in="borderShadow" /><feMergeNode in="SourceGraphic" /></feMerge>
+      </filter>
+    </defs>
+  </svg>
+
+  <main id="story">
+    <!-- 1 · THE RIDER -->
+    <div class="stage" id="s1" style="--hold:0; z-index:1">
+      <section class="panel panel--hero" aria-labelledby="h1">
+        <svg class="base" aria-hidden="true"></svg>
+        <div class="clip" data-clip="1"><video muted loop playsinline preload="none" aria-hidden="true" data-src="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/06bb5482-61dc-4b9a-8955-4f0f4228fae7.mp4" poster="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/fcfd2dbb-9fd0-4e8d-b223-d138ce336188.webp"></video></div>
+        <svg class="scene" aria-hidden="true"></svg>
+        <div class="figure figure--rider" id="rider" role="img" aria-label="Alexander on horseback as a mosaic cut-out, galloping with his sword"></div>
+        <header class="panel__text">
+          <p class="label">356–323 BC</p>
+          <h1 class="heading" id="h1">Alexander the Great</h1>
+          <p class="script">“He never stopped riding.”</p>
+        </header>
+        <a class="scroll-cue label" href="#s2"><span>Scroll</span><i aria-hidden="true"></i></a>
+      </section>
+    </div>
+
+    <!-- 2 · THE YOUNG PRINCE -->
+    <div class="stage" id="s2" style="--hold:110; z-index:2">
+      <section class="panel" aria-labelledby="h2">
+        <svg class="base" aria-hidden="true"></svg>
+        <svg class="scene" aria-hidden="true"></svg>
+        <div class="figure figure--horse" id="horse" role="img" aria-label="Bucephalus as a mosaic cut-out, rearing and then calming as he faces the sun"></div>
+        <div class="panel__text">
+          <p class="label">356–336 BC</p>
+          <h2 class="heading" id="h2">The Young Prince</h2>
+          <p class="copy">Born in Pella, Macedonia. As a boy he tamed the wild horse Bucephalus by turning its head to the sun so it couldn't see its own shadow. Taught by Aristotle, he became king at 20 when his father was murdered.</p>
+          <p class="script">“Macedonia is too small for you.”</p>
+          <p class="attribution">(his father, as told by Plutarch)</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- 3 · THE WAR BEGINS -->
+    <div class="stage" id="s3" style="--hold:170; z-index:3">
+      <section class="panel" aria-labelledby="h3">
+        <svg class="base" aria-hidden="true"></svg>
+        <div class="clip" data-clip="3"><video muted loop playsinline preload="none" aria-hidden="true" data-src="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/11197db9-f017-4d3e-87c5-1a93b16029cd.mp4" poster="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/d3854468-cae5-4a33-8c48-701184e70b00.webp"></video></div>
+        <svg class="scene" aria-hidden="true"></svg>
+        <div class="panel__text">
+          <p class="label">334–333 BC</p>
+          <h2 class="heading" id="h3">The War Begins</h2>
+          <p class="copy">At 22 he crossed into Asia with about 35,000 men to take on the Persian Empire. He won at the Granicus river, cut the Gordian knot, and at Issus the Persian king Darius ran from him.</p>
+          <p class="script">“Whoever undoes the knot will rule Asia.”</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- 4 · CONQUERING AN EMPIRE -->
+    <div class="stage" id="s4" style="--hold:160; z-index:4">
+      <section class="panel" aria-labelledby="h4">
+        <svg class="base" aria-hidden="true"></svg>
+        <div class="clip" data-clip="4"><video muted loop playsinline preload="none" aria-hidden="true" data-src="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/0f4cb48c-7a60-40be-89bd-d48b61a6af71.mp4" poster="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/f18d2400-a315-4150-81c9-bda41a1d18c5.webp"></video></div>
+        <svg class="scene" aria-hidden="true"></svg>
+        <div class="panel__text">
+          <p class="label">332–330 BC</p>
+          <h2 class="heading" id="h4">Conquering an Empire</h2>
+          <p class="copy">He built a road across the sea to take the island city of Tyre, founded Alexandria in Egypt, and beat Darius again at Gaugamela. At 25 he was King of Asia.</p>
+          <p class="script">“King of Asia.”</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- 5 · TO THE EDGE OF THE WORLD -->
+    <div class="stage" id="s5" style="--hold:150; z-index:5">
+      <section class="panel" aria-labelledby="h5">
+        <svg class="base" aria-hidden="true"></svg>
+        <div class="clip" data-clip="5"><video muted loop playsinline preload="none" aria-hidden="true" data-src="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/efb418d1-10ef-49c4-9219-fd9eab5c1ee1.mp4" poster="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/de76d64c-f986-4de8-bc28-be7615338f1d.webp"></video></div>
+        <svg class="scene" aria-hidden="true"></svg>
+        <div class="panel__text">
+          <p class="label">329–325 BC</p>
+          <h2 class="heading" id="h5">To the Edge of the World</h2>
+          <p class="copy">He pushed through Central Asia into India and beat King Porus and his war elephants at the Hydaspes river, where his horse Bucephalus died. He wanted to go on, but his exhausted army refused, so he turned back.</p>
+          <p class="script">“He only stopped because his men did.”</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- 6 · 323 BC TO TODAY -->
+    <div class="stage" id="s6" style="--hold:200; z-index:6">
+      <section class="panel panel--dark" aria-labelledby="h6">
+        <svg class="base" aria-hidden="true"></svg>
+        <svg class="scene" aria-hidden="true"></svg>
+        <div class="panel__text">
+          <p class="label">323 BC → Today</p>
+          <h2 class="heading" id="h6">323 BC to Today</h2>
+          <p class="copy">He died in Babylon in 323 BC, aged 32, still planning his next campaign.</p>
+          <p class="script">“Gone at 32. Remembered ever since.”</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- 7 · WHY HE'S STILL FAMOUS -->
+    <div class="stage stage--last" id="s7" style="--hold:60; z-index:7">
+      <section class="panel" aria-labelledby="h7">
+        <svg class="base" aria-hidden="true"></svg>
+        <div class="clip" data-clip="7"><video muted loop playsinline preload="none" aria-hidden="true" data-src="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/a4b378e4-16a5-450b-b17e-39fd0597593f.mp4" poster="https://d2ol7oe51mr4n9.cloudfront.net/user_38RfhGrFWe0TNVNCsp1Pnsu6Xk4/73e97d86-4c31-4300-ac6e-2c853a212ddd.webp"></video></div>
+        <svg class="scene" aria-hidden="true"></svg>
+        <div class="figure figure--rider" id="rider2" aria-hidden="true"></div>
+        <div class="panel__text">
+          <p class="label">2,300+ years later</p>
+          <h2 class="heading" id="h7">Why He's Still Famous</h2>
+          <p class="copy">Alexander the Great is still famous for his persistence. He went all in, he never wanted to quit, and he had the ambition to conquer the world. He didn't settle for less.</p>
+          <p class="script">“Never settle.”</p>
+        </div>
+        <div class="closing"><p>Alexander III of Macedon · 356–323 BC</p></div>
+      </section>
+    </div>
+  </main>
+
+  <!-- The map: fixed, tears in at the end of section 3 -->
+  <aside class="map" aria-label="Map of Alexander's route from Pella to India and back to Babylon (approximate)">
+    <div class="map__paper">
+      <p class="map__title">His route · borders approximate</p>
+      <svg class="map__svg" role="img" aria-label="Torn-paper map: a terracotta line runs from Pella through Asia Minor, Egypt, Persia and Central Asia to the Indus, then back to Babylon"></svg>
+      <div class="map__legend"></div>
+    </div>
+  </aside>
+
+  <!-- Slim timeline bar -->
+  <div class="timebar" aria-hidden="true">
+    <svg class="timebar__paper"></svg>
+    <span class="timebar__end timebar__end--l">356 BC</span>
+    <div class="timebar__track"><div class="timebar__fill"></div></div>
+    <span class="timebar__end timebar__end--r">323 BC</span>
+    <span class="timebar__chip">356 BC · Born in Pella</span>
+  </div>
+
+  <!-- Timeline takeover (section 6) -->
+  <div class="timebig" aria-hidden="true">
+    <svg class="timebig__paper"></svg>
+    <div class="timebig__head">
+      <p class="timebig__year">323 BC</p>
+      <p class="timebig__label label">Dies in Babylon, aged 32</p>
+    </div>
+    <div class="timebig__track"><div class="timebig__fill"></div><div class="timebig__marks"></div></div>
+    <span class="timebig__stamp label">Today</span>
+  </div>
+
+  <script src="assets/vendor/gsap.min.js" defer></script>
+  <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="assets/vendor/lenis.min.js" defer></script>
+  <script src="main.js" defer></script>
+</body>
+</html>
