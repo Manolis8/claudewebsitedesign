@@ -17,6 +17,10 @@
 
   gsap.defaults({ ease: 'expo.out', duration: 1.2 });
 
+  const nav = $('.nav');
+  const edges = $('.edges');
+  const cursor = $('.cursor');
+
   /* ── Smooth scroll ─────────────────────────────────────────── */
   let lenis = null;
   if (!reduce && window.Lenis) {
@@ -104,36 +108,6 @@
     .to('.hero__content', { yPercent: -22, opacity: 0, ease: 'none' }, 0)
     .to('.hero__note, .hero__scroll', { opacity: 0, ease: 'none', duration: 0.35 }, 0);
 
-  /* ── Background colour follows the time of day ─────────────── */
-  const bgSections = $$('[data-bg]');
-  bgSections.forEach((sec, i) => {
-    if (!i) return;
-    gsap.fromTo(document.body,
-      { backgroundColor: bgSections[i - 1].dataset.bg },
-      { backgroundColor: sec.dataset.bg, ease: 'none', immediateRender: false,
-        scrollTrigger: { trigger: sec, start: 'top 85%', end: 'top 25%', scrub: true } });
-  });
-
-  /* Dark mode for chrome while dusk is on screen */
-  const nav = $('.nav');
-  const edges = $('.edges');
-  const cursor = $('.cursor');
-  ScrollTrigger.create({
-    trigger: '.footer', start: 'top 55%', end: 'bottom top',
-    onToggle: ({ isActive }) => [nav, edges, cursor].forEach((n) => n && n.classList.toggle('is-dark', isActive)),
-  });
-
-  /* Active nav item */
-  const navLinks = $$('.nav__pill a');
-  navLinks.forEach((link) => {
-    const sec = $(link.getAttribute('href'));
-    if (!sec) return;
-    ScrollTrigger.create({
-      trigger: sec, start: 'top 50%', end: 'bottom 50%',
-      onToggle: ({ isActive }) => isActive && navLinks.forEach((l) => l.classList.toggle('is-active', l === link)),
-    });
-  });
-
   /* ── Organic grass-line image reveals ──────────────────────── */
   // The top edge of the clip is a row of grass blades that rises through the frame.
   const blades = (p, n, amp, seed) => {
@@ -163,6 +137,61 @@
       onComplete: () => (fig.style.clipPath = 'none'),
     }, 0).fromTo(img, { scale: 1.28 }, { scale: 1, duration: 2.4, ease: 'expo.out' }, 0);
   };
+
+  /* ── Pinned "design grows" story (desktop) ─────────────────── */
+  const mm = gsap.matchMedia();
+  mm.add('(min-width: 901px)', () => {
+    const track = $('.grow__track');
+    const stem = $('.grow__stem path');
+    const current = $('.grow__current');
+    const dist = () => Math.max(0, track.scrollWidth - window.innerWidth);
+    const len = stem.getTotalLength();
+    gsap.set(stem, { strokeDasharray: len, strokeDashoffset: len });
+
+    const st = { trigger: '.grow', start: 'top top', end: () => '+=' + dist() * 1.1, scrub: 1, invalidateOnRefresh: true };
+    const move = gsap.to(track, {
+      x: () => -dist(), ease: 'none',
+      scrollTrigger: {
+        ...st, pin: true, anticipatePin: 1,
+        onToggle: ({ isActive }) => edges.classList.toggle('is-quiet', isActive),
+        onUpdate: (self) => { current.textContent = '0' + clamp(1, 4, 1 + Math.floor(self.progress * 4.4)); },
+      },
+    });
+    gsap.to(stem, { strokeDashoffset: 0, ease: 'none', scrollTrigger: { ...st } });
+
+    $$('.reveal-x').forEach((fig) => grassReveal(fig, { trigger: fig, containerAnimation: move, start: 'left 88%' }));
+    $$('.stage__copy').forEach((c) => gsap.fromTo(c, { x: 40 }, { x: -20, ease: 'none', scrollTrigger: { trigger: c, containerAnimation: move, start: 'left right', end: 'right left', scrub: true } }));
+  });
+  mm.add('(max-width: 900px)', () => {
+    $$('.reveal-x').forEach((fig) => grassReveal(fig, { trigger: fig, start: 'top 85%' }));
+  });
+
+  /* ── Background colour follows the time of day ─────────────── */
+  const bgSections = $$('[data-bg]');
+  bgSections.forEach((sec, i) => {
+    if (!i) return;
+    gsap.fromTo(document.body,
+      { backgroundColor: bgSections[i - 1].dataset.bg },
+      { backgroundColor: sec.dataset.bg, ease: 'none', immediateRender: false,
+        scrollTrigger: { trigger: sec, start: 'top 85%', end: 'top 25%', scrub: true } });
+  });
+
+  /* Dark mode for chrome while dusk is on screen */
+  ScrollTrigger.create({
+    trigger: '.footer', start: 'top 55%', end: 'bottom top',
+    onToggle: ({ isActive }) => [nav, edges, cursor].forEach((n) => n && n.classList.toggle('is-dark', isActive)),
+  });
+
+  /* Active nav item */
+  const navLinks = $$('.nav__pill a');
+  navLinks.forEach((link) => {
+    const sec = $(link.getAttribute('href'));
+    if (!sec) return;
+    ScrollTrigger.create({
+      trigger: sec, start: 'top 50%', end: 'bottom 50%',
+      onToggle: ({ isActive }) => isActive && navLinks.forEach((l) => l.classList.toggle('is-active', l === link)),
+    });
+  });
 
   $$('.reveal').forEach((fig) => {
     grassReveal(fig, { trigger: fig, start: 'top 84%' });
@@ -195,33 +224,6 @@
   gsap.from('.card', {
     y: 70, opacity: 0, duration: 1.4, stagger: 0.1,
     scrollTrigger: { trigger: '.bento', start: 'top 82%', once: true },
-  });
-
-  /* ── Pinned "design grows" story (desktop) ─────────────────── */
-  const mm = gsap.matchMedia();
-  mm.add('(min-width: 901px)', () => {
-    const track = $('.grow__track');
-    const stem = $('.grow__stem path');
-    const current = $('.grow__current');
-    const dist = () => Math.max(0, track.scrollWidth - window.innerWidth);
-    const len = stem.getTotalLength();
-    gsap.set(stem, { strokeDasharray: len, strokeDashoffset: len });
-
-    const st = { trigger: '.grow', start: 'top top', end: () => '+=' + dist() * 1.1, scrub: 1, invalidateOnRefresh: true };
-    const move = gsap.to(track, {
-      x: () => -dist(), ease: 'none',
-      scrollTrigger: {
-        ...st, pin: true, anticipatePin: 1,
-        onUpdate: (self) => { current.textContent = '0' + clamp(1, 4, 1 + Math.floor(self.progress * 4.4)); },
-      },
-    });
-    gsap.to(stem, { strokeDashoffset: 0, ease: 'none', scrollTrigger: { ...st } });
-
-    $$('.reveal-x').forEach((fig) => grassReveal(fig, { trigger: fig, containerAnimation: move, start: 'left 88%' }));
-    $$('.stage__copy').forEach((c) => gsap.fromTo(c, { x: 40 }, { x: -20, ease: 'none', scrollTrigger: { trigger: c, containerAnimation: move, start: 'left right', end: 'right left', scrub: true } }));
-  });
-  mm.add('(max-width: 900px)', () => {
-    $$('.reveal-x').forEach((fig) => grassReveal(fig, { trigger: fig, start: 'top 85%' }));
   });
 
   /* ── Edge botanicals: draw with scroll, sway on idle, bend from the cursor ── */
@@ -290,6 +292,7 @@
     const ry = gsap.quickTo(ring, 'y', { duration: 0.6, ease: 'power3.out' });
 
     window.addEventListener('pointermove', (e) => {
+      cursor.classList.add('is-on');
       dx(e.clientX); dy(e.clientY); rx(e.clientX); ry(e.clientY);
       // stems lean away from the cursor, falling off with distance
       const w = window.innerWidth;
@@ -334,6 +337,7 @@
   document.fonts.ready.then(() => {
     heroIntro();
     $$('.split').forEach((el) => revealWords(el));
+    ScrollTrigger.sort();
     ScrollTrigger.refresh();
   });
   window.addEventListener('load', () => ScrollTrigger.refresh());

@@ -45,3 +45,26 @@ The structure follows the layout reference (*Sentra*): centered pill nav, a hero
 | ∞ | **Edges** | none | Left: three grass stems + a botanical frond. Right: a dandelion stem + drifting seed fluff (SVG) | Draw themselves with total scroll progress. Idle sway (sine, 4–7 s). Stems near the cursor bend away from it |
 
 **Where I changed the reference, and why:** I added the golden-hour quote (section 6) between the grid and the footer. Without it the light jumps from dawn straight to dusk, and the "time of day" journey only works if there's a real golden hour in the middle.
+
+## Jury review (2 rounds, desktop 1440 + mobile 390, real fonts and media)
+
+| Section | R1 | R2 | Notes |
+|---|---|---|---|
+| Hero | 9 | 9 | Strong first frame. The serif plus the poppy-italic "ease." carries it |
+| Seed | 8 | 8.5 | Tightened the gap to the next section |
+| Statement | 6.5 | 8 | Rebuilt as a 3-column composition (text · petals · text) instead of a lone floating image |
+| How design grows | 7 | 8.5 | Fixed scroll-trigger order so colours after the pin land on time. Edges dim while content slides under them |
+| Grid | 6 (wrong night colour) | 8.5 | Now sits in warm sand as intended |
+| Quote | 6 | 8 | Text moved off the image (it was moss on flowers, low contrast) |
+| Footer | 8.5 | 9 | Logo now visible on dusk |
+
+Round-1 fixes: scroll-trigger ordering (the background went to night too early), statement layout, quote contrast, edges covering moving text, and a stray cursor ring at (0,0) before the first mouse move. Round 2: the logo became a frosted pill so it stays readable over any section on mobile.
+
+Checks: no JS errors, no horizontal scroll at 390 px, fonts load, and reduced motion shows still posters with stacked stages.
+
+## What I'd push further
+
+1. **Ambient sound toggle.** Off by default: wind in grass, then crickets at dusk.
+2. **A real shader for the grass reveal**, replacing the clip-path polygon: a noise-displaced mask, so the blades sway as they part.
+3. **Scrubbed hero exit.** Turn the hero video into an image sequence so scrolling pushes the camera *into* the meadow instead of just scaling it.
+4. **Lighthouse pass on the real host.** Moving off the CDN to a host with WebM and long-cache headers is the biggest remaining performance win.
