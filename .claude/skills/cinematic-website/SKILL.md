@@ -82,7 +82,7 @@ Then **verify publicly** from a clean browser: 200s for page/CSS/JS/vendor, no c
 ---
 
 ## Guardrails
-- Paid generations: always quote first. Never generate fake work a client would present as real (e.g. fake tattoos, fake reviews).
+- Paid generations: always quote first. Never generate fake work a client would present as real (e.g. fake portfolio pieces, fake reviews).
 - Don't touch other Vercel projects, env vars or domains without explicit approval.
 - Commit and push after each phase — cloud containers are ephemeral.
 - Report honestly what wasn't verified (Lighthouse, video playback in headless, WebM not shipped, etc.).

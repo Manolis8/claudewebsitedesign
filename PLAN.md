@@ -1,8 +1,10 @@
-# Cinematic Nature Website: Plan
+# Haven: first plan
+
+> This is the first plan, written before the concept was locked. The idea grew into **Haven**, an AI design studio homepage set in one meadow. The final direction is in [ART-DIRECTION.md](ART-DIRECTION.md) and the live site is [haven-puce-tau.vercel.app](https://haven-puce-tau.vercel.app).
 
 **Goal:** a calm, cinematic, nature-led website at Awwwards level. It's a showcase piece for the portfolio, and the same template can later be pitched to real retreats, cabins, spas and wellness brands.
 
-**Status:** planning only. Nothing gets built until Phase 2 is signed off.
+**Status:** done. Built and live as Haven.
 
 ---
 
@@ -12,7 +14,7 @@ A nature site needs a *subject*, otherwise it ends up as pretty pictures with no
 
 | # | Concept | What it is | Good for pitching to |
 |---|---------|------------|----------------------|
-| **A** | **A day in the valley** *(recommended)* | A fictional cabin retreat, e.g. "Stillwater". Scrolling the homepage takes you **from dawn to night** in one landscape | retreats, cabins, glamping, eco-hotels |
+| **A** | **A day in the valley** *(recommended)* | A fictional cabin retreat, e.g. "Haven". Scrolling the homepage takes you **from dawn to night** in one landscape | retreats, cabins, glamping, eco-hotels |
 | B | **Breathe** | A meditation/slow-living experience. The page breathes with you (inhale/exhale pacing, sound) | wellness apps, yoga studios, spas |
 | C | **Field notes** | An editorial journal of one place through 4 seasons, like a photo book | photographers, outdoor brands, tourism boards |
 
@@ -64,12 +66,12 @@ All prompts cite the palette and mood from the brief. **I'll quote the credit co
 4. **Stills:** cabin interior, hands, a book, texture plates
 5. **Sound:** a free licensed ambience (freesound / Epidemic) or Higgsfield audio
 
-## Phase 4: Homepage structure (concept A, "Stillwater")
+## Phase 4: Homepage structure (concept A, "Haven")
 
 | # | Section | Time | What happens |
 |---|---------|------|--------------|
 | 1 | **Intro** | pre-dawn | Black screen, "Put your phone down for a minute" fades in, then a `Enter · sound on/off` button |
-| 2 | **Hero** | dawn | Fog lifts off the lake, a huge "Stillwater" title, one line of copy |
+| 2 | **Hero** | dawn | Fog lifts off the lake, a huge "Haven" title, one line of copy |
 | 3 | **The place** | morning | 3 short lines of story that reveal as you scroll, with pinned parallax layers of the trees |
 | 4 | **The cabins** | midday | A horizontal scroll of 3 cabins (interior stills + a detail loop) |
 | 5 | **Rituals** | afternoon | Sauna, swim, read, walk: a grid of looping videos that come into focus on hover |
