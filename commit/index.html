@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>COMMIT · Show the thing you built</title>
+  <meta name="description" content="COMMIT turns your GitHub repo into a post people scroll, upvote and follow. A feed for code projects, a launch leaderboard every day, and profiles built from your repos." />
+  <meta name="theme-color" content="#EDEDEB" />
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="preload" href="assets/fonts/JetBrainsMonoNL-Regular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip" href="#s2">Skip to content</a>
+
+  <!-- The big animation: pixels that fall out of the T, build the phone, and fly home -->
+  <canvas class="fx" aria-hidden="true"></canvas>
+
+  <main>
+    <!-- 01 HERO -->
+    <section class="sec sec--hero" id="s1" data-n="01" aria-label="COMMIT">
+      <nav class="nav" aria-label="Main">
+        <a class="nav__logo" href="#s1"><span class="logo-sq" aria-hidden="true">[■]</span> COMMIT</a>
+        <a class="nav__link" href="#s4">FEED</a>
+        <a class="nav__link" href="#s4">LAUNCHES</a>
+        <a class="nav__link" href="#s7">PROFILES</a>
+        <a class="nav__link" href="#s2">MANIFESTO</a>
+        <a class="btn btn--line nav__cta" href="#s8">[ CONNECT GITHUB ]</a>
+        <button class="btn btn--line nav__menu" type="button" aria-expanded="false" aria-controls="menu">[ MENU ]</button>
+      </nav>
+      <div class="hair hair--nav" aria-hidden="true"></div>
+      <div class="meta">
+        <p class="kicker" data-decode>EST. 2026 //</p>
+        <p class="counter">01 / 08</p>
+      </div>
+
+      <div class="hero__stage">
+        <div class="wm wm--hero" id="wmHero" role="img" aria-label="COMMIT"></div>
+        <div class="hero__link" aria-hidden="true"><span class="hair hair--x"></span><span class="amp">&amp;</span><span class="hair hair--x hair--low"></span></div>
+        <article class="card card--blue card--hero" aria-label="Number one project today">
+          <div class="card__row"><span>#1 TODAY</span><span>▲ 482</span></div>
+          <div class="cover cover--code" data-code="7"></div>
+          <p>TINYDB<br />A SMALL EMBEDDED DATABASE IN RUST.</p>
+          <div class="card__row card__row--end"><span>@ANNA-K</span><span>RUST</span><span>→</span></div>
+        </article>
+      </div>
+
+      <div class="hero__copy">
+        <p class="block">GREAT PROJECTS DIE IN /REPOS. COMMIT TURNS YOUR REPO INTO A POST PEOPLE SCROLL, UPVOTE AND FOLLOW.</p>
+        <ul class="list">
+          <li>A FEED FOR CODE PROJECTS</li>
+          <li>A LAUNCH LEADERBOARD EVERY DAY</li>
+          <li>PROFILES BUILT FROM YOUR REPOS</li>
+        </ul>
+        <div class="actions">
+          <a class="btn btn--fill" href="#s8">[ CONNECT GITHUB → ]</a>
+          <a class="btn btn--line" href="#s4">[ SEE THE FEED ]</a>
+        </div>
+      </div>
+
+      <a class="badge badge--hero" href="#s4" aria-label="Follow a repo">
+        <svg class="badge__ring" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="ringA" d="M60,60 m-47,0 a47,47 0 1,1 94,0 a47,47 0 1,1 -94,0" /></defs><text><textPath href="#ringA" textLength="290">FOLLOW A REPO • FOLLOW A REPO •</textPath></text></svg>
+        <span class="badge__core badge__core--blue"><i data-ico="cursor"></i></span>
+      </a>
+
+      <div class="strip" aria-label="Show the thing you built to people who care">
+        <div class="hair" aria-hidden="true"></div>
+        <p class="strip__words"><span>SHOW</span><span>THE</span><span>THING</span><span>YOU</span><span>BUILT</span><span>TO</span><span>PEOPLE</span><span>WHO</span><span>CARE</span></p>
+      </div>
+    </section>
+
+    <!-- 02 THE PROBLEM -->
+    <section class="sec sec--problem" id="s2" data-n="02" aria-labelledby="k2">
+      <div class="meta"><p class="kicker" id="k2" data-decode>02 // THE PROBLEM</p><p class="counter">02 / 08</p></div>
+      <div class="hair" aria-hidden="true"></div>
+      <div class="strip strip--top" aria-label="You built something cool. Nobody saw it.">
+        <p class="strip__words"><span>YOU</span><span>BUILT</span><span>SOMETHING</span><span>COOL.</span><span>NOBODY</span><span>SAW</span><span>IT.</span></p>
+        <div class="hair" aria-hidden="true"></div>
+      </div>
+      <div class="problems">
+        <p class="block" data-decode>NO FEED. GITHUB HOSTS CODE, IT DOESN'T SHOW IT OFF.</p>
+        <p class="block" data-decode>NO DISCOVERY. NEW PROJECTS ARE HARD TO FIND.</p>
+        <p class="block" data-decode>NO SCROLL. READMES WEREN'T MADE FOR IT.</p>
+      </div>
+    </section>
+
+    <!-- 03 HOW IT WORKS -->
+    <section class="sec sec--how" id="s3" data-n="03" aria-labelledby="k3">
+      <div class="meta"><p class="kicker" id="k3" data-decode>03 // HOW IT WORKS</p><p class="counter">03 / 08</p></div>
+      <div class="hair" aria-hidden="true"></div>
+      <div class="flow" aria-label="Connect GitHub, pick a repo, it becomes a post">
+        <svg class="flow__lines" aria-hidden="true"></svg>
+        <span class="flow__step btn btn--line">[ CONNECT GITHUB ]</span>
+        <span class="flow__step btn btn--line">[ PICK A REPO ]</span>
+        <span class="flow__step btn btn--fill">[ IT BECOMES A POST ]</span>
+      </div>
+      <div class="morph" aria-hidden="true">
+        <div class="readme">
+          <p class="readme__head"><span>README.MD</span><span>412 LINES</span></p>
+          <div class="readme__body"></div>
+        </div>
+        <span class="morph__arrow">→</span>
+        <article class="post post--morph">
+          <div class="post__head"><span>@ANNA-K / TINYDB</span><span>NOW</span></div>
+          <div class="cover cover--code" data-code="3"></div>
+          <p>TINYDB<br /><span class="dim">A SMALL EMBEDDED DATABASE IN RUST.</span></p>
+          <p class="dim">RUST • DATABASE • OPEN SOURCE</p>
+          <div class="post__acts"><span class="chip">▲ 1</span><span><i data-ico="star"></i> 0</span><span>[ TRY IT ]</span></div>
+        </article>
+      </div>
+      <div class="phone-slot" data-screen="feed"></div>
+    </section>
+
+    <!-- 04 THE FEED + LAUNCH DAY (sticky) -->
+    <section class="sec sec--feed" id="s4" data-n="04" aria-labelledby="k4">
+      <div class="sticky">
+        <div class="meta"><p class="kicker" id="k4" data-decode>04 // THE FEED + LAUNCH DAY</p><p class="counter">04 / 08</p></div>
+        <div class="hair" aria-hidden="true"></div>
+        <div class="feed__grid">
+          <div class="feed__copy">
+            <p class="block">SCROLL PROJECTS LIKE PHOTOS. EVERY POST IS A REPO WITH A COVER, A ONE-LINE PITCH AND A LINK TO THE CODE.</p>
+            <ul class="list">
+              <li>DOUBLE-CLICK TO UPVOTE</li>
+              <li>FOLLOW MAKERS AND PROJECTS</li>
+              <li>COMMENT ON THE CODE ITSELF</li>
+              <li>TRY IT: DEMO LINK ON EVERY POST</li>
+            </ul>
+          </div>
+          <div class="board" aria-label="Launching today">
+            <div class="board__head"><span>LAUNCHING TODAY</span><span class="dim">RESETS IN <span class="countdown">06:12:40</span></span></div>
+            <ol class="board__list"></ol>
+          </div>
+        </div>
+        <div class="phone-slot" data-screen="feed"></div>
+      </div>
+    </section>
+
+    <!-- 05 THE PROJECT PAGE -->
+    <section class="sec sec--project" id="s5" data-n="05" aria-labelledby="k5">
+      <div class="meta"><p class="kicker" id="k5" data-decode>05 // THE PROJECT PAGE</p><p class="counter">05 / 08</p></div>
+      <div class="hair" aria-hidden="true"></div>
+      <div class="project__grid">
+        <p class="block">YOUR README, MADE FOR SCROLLING.</p>
+        <article class="diff" aria-label="A comment pinned to line 13 of the code">
+          <div class="post__head"><span>@ANNA-K / TINYDB</span><span>COMMIT • 2M</span></div>
+          <pre class="diff__code"><span class="ln">  12  FN OPEN(PATH: &amp;STR) {</span>
+<span class="ln ln--hit">+ 13      LET WAL = WAL::NEW(PATH);<span class="react"><i data-ico="heart"></i> 18</span></span>
+<span class="ln">+ 14      WAL.REPLAY()?;</span>
+<span class="ln ln--del">- 15      CACHE.CLEAR();</span></pre>
+          <div class="post__acts"><span><i data-ico="heart"></i> 128</span><span><i data-ico="star"></i> 2.4K</span><span><i data-ico="fork"></i> 91</span><span>3 COMMENTS ON LINE 13</span></div>
+          <div class="thread">
+            <p><span class="dim">@MAYA-R ON LINE 13</span><br />WAL ON OPEN IS SUCH A GOOD CALL.</p>
+            <p><span class="dim">@ANNA-K</span><br />THANKS. CRASH-SAFE BY DEFAULT NOW.</p>
+          </div>
+        </article>
+      </div>
+      <div class="phone-slot" data-screen="project"></div>
+    </section>
+
+    <!-- 06 UPVOTE, FOLLOW, FORK -->
+    <section class="sec sec--acts" id="s6" data-n="06" aria-labelledby="k6">
+      <div class="meta"><p class="kicker" id="k6" data-decode>06 // UPVOTE, FOLLOW, FORK</p><p class="counter">06 / 08</p></div>
+      <div class="hair" aria-hidden="true"></div>
+      <div class="acts">
+        <div class="act">
+          <p class="act__word">UPVOTE</p>
+          <div class="act__fx"><button class="stamp" type="button" aria-label="Upvote"><span class="stamp__box">▲</span><span class="stamp__n">482</span></button></div>
+          <p class="block">UPVOTE TO PUSH IT UP TODAY'S BOARD.</p>
+        </div>
+        <div class="act">
+          <p class="act__word">•&nbsp;&nbsp;FOLLOW</p>
+          <div class="act__fx"><button class="follow btn btn--fill" type="button" aria-pressed="false"><span class="follow__label">[ FOLLOW ]</span></button></div>
+          <p class="block">FOLLOW A MAKER TO SEE EVERYTHING THEY SHIP.</p>
+        </div>
+        <div class="act">
+          <p class="act__word">•&nbsp;&nbsp;FORK</p>
+          <div class="act__fx"><svg class="forkline" viewBox="0 0 240 72" aria-hidden="true"><path class="forkline__main" d="M0 52 H240" /><path class="forkline__branch" d="M96 52 H132 V16 H240" /><rect class="forkline__dot" x="92" y="48" width="8" height="8" /><rect class="forkline__dot" x="232" y="12" width="8" height="8" /><rect class="forkline__dot" x="232" y="48" width="8" height="8" /></svg></div>
+          <p class="block">FORK IT TO REMIX IT. YOUR FORK SHOWS UP ON THEIR POST.</p>
+        </div>
+      </div>
+      <div class="phone-slot" data-screen="follow"></div>
+    </section>
+
+    <!-- 07 WHO IT'S FOR -->
+    <section class="sec sec--who" id="s7" data-n="07" aria-labelledby="k7">
+      <div class="meta"><p class="kicker" id="k7" data-decode>07 // WHO IT'S FOR</p><p class="counter">07 / 08</p></div>
+      <div class="hair" aria-hidden="true"></div>
+      <div class="who">
+        <div class="who__col"><p>MAKERS</p><p class="block">STUDENTS, INDIE HACKERS AND OPEN-SOURCE MAINTAINERS WHO WANT PEOPLE TO SEE WHAT THEY BUILT.</p></div>
+        <div class="who__col"><p>BROWSERS</p><p class="block">PEOPLE WHO LIKE FINDING NEW TOOLS AND PROJECTS BEFORE EVERYONE ELSE.</p></div>
+      </div>
+      <div class="orbit" aria-hidden="true"></div>
+      <div class="phone-slot" data-screen="profile"></div>
+    </section>
+
+    <!-- 08 START -->
+    <section class="sec sec--start" id="s8" data-n="08" aria-labelledby="k8">
+      <div class="meta"><p class="kicker" id="k8" data-decode>08 // START</p><p class="counter">08 / 08</p></div>
+      <div class="final" role="img" aria-label="COMMIT">
+        <div class="final__row final__row--a"><div class="wm wm--com" id="wmCom"></div><span class="hair hair--x final__line final__line--a"></span><span class="amp final__amp">&amp;</span></div>
+        <p class="final__meta"><span>2026 X YOUR REPOS</span><span class="hair hair--x final__line final__line--b"></span></p>
+        <div class="final__row final__row--b"><div class="wm wm--mit" id="wmMit"></div></div>
+      </div>
+      <span class="hair hair--x final__line final__line--c" aria-hidden="true"></span>
+      <article class="card card--blue card--start">
+        <p>CONNECT GITHUB. PICK A REPO. YOUR PROJECT IS LIVE IN THE FEED.</p>
+        <div class="card__row card__row--end"><a class="card__btn" href="#s1">[ START → ]</a><span>POST #000002</span></div>
+      </article>
+      <a class="badge badge--start" href="#s1" aria-label="Connect GitHub">
+        <svg class="badge__ring" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="ringB" d="M60,60 m-47,0 a47,47 0 1,1 94,0 a47,47 0 1,1 -94,0" /></defs><text><textPath href="#ringB" textLength="290">CONNECT GITHUB • CONNECT GITHUB •</textPath></text></svg>
+        <span class="badge__core"></span>
+      </a>
+      <footer class="strip strip--foot">
+        <div class="hair" aria-hidden="true"></div>
+        <p class="strip__words"><span>COMMIT © 2026</span><a href="#s4">FEED</a><a href="#s4">LAUNCHES</a><a href="#s7">PROFILES</a><a href="#s2">MANIFESTO</a><a href="#s8">PRIVACY</a></p>
+      </footer>
+    </section>
+  </main>
+
+  <!-- The phone that follows the page (desktop) -->
+  <div class="phone" aria-hidden="true">
+    <div class="phone__screen"></div>
+    <span class="phone__marker"></span>
+  </div>
+
+  <!-- Mobile menu, in the blue -->
+  <div class="menu" id="menu" hidden>
+    <button class="menu__close" type="button">[ CLOSE ]</button>
+    <nav class="menu__list" aria-label="Menu">
+      <a href="#s1">HOME</a><a href="#s4">FEED</a><a href="#s4">LAUNCHES</a><a href="#s7">PROFILES</a><a href="#s2">MANIFESTO</a><a href="#s8">CONNECT GITHUB</a>
+    </nav>
+  </div>
+
+  <div class="trail" aria-hidden="true"></div>
+
+  <script src="assets/vendor/gsap.min.js" defer></script>
+  <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="assets/vendor/lenis.min.js" defer></script>
+  <script src="main.js" defer></script>
+</body>
+</html>
