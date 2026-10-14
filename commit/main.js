@@ -497,7 +497,7 @@
     });
   }
   const snap = v => Math.round(v / PIX) * PIX;
-  let lastState = '', lastBlur = -1;
+  let lastState = '';
   function renderFX(time) {
     const y = scrollY, { W, H } = G;
     cx.clearRect(0, 0, W, H);
@@ -510,12 +510,10 @@
       lastState = state;
     }
     let phoneA = 0;
-    let soft = 0;                                                     // 0 = sharp, 1 = blurred into the background
-    const draw = (x, y2, c, a = 1) => { a *= 1 - soft * .35; if (a <= 0 || y2 < -PIX || y2 > H + PIX) return; cx.globalAlpha = a; cx.fillStyle = c; cx.fillRect(snap(x), snap(y2), PIX - 1, PIX - 1); };
+    const draw = (x, y2, c, a = 1) => { if (a <= 0 || y2 < -PIX || y2 > H + PIX) return; cx.globalAlpha = a; cx.fillStyle = c; cx.fillRect(snap(x), snap(y2), PIX - 1, PIX - 1); };
     const wob = p => Math.round(Math.sin(time * 1.6 + p.ph)) * PIX;   // hanging pixels twitch one block
     if (state === 'A') {
       const pA = (y - G.A0) / (G.A1 - G.A0);
-      soft = clamp(pA * 2.5);                                         // the rain goes soft as soon as it leaves the T
       P.forEach(p => {
         if (!p.show) return;
         const u = clamp((pA - p.dA) / (1 - p.dA));
@@ -526,7 +524,6 @@
     } else if (state === 'B') {
       const pB = (y - G.B0) / (G.B1 - G.B0);
       phoneA = clamp((pB - .86) / .12);
-      soft = clamp(1 - (pB - .3) / .45);                              // stays soft over 03's text, sharpens as it snaps into the phone
       P.forEach(p => {
         const u = clamp((pB - p.dB) / .32), uq = Math.floor(u * 4) / 4;           // snap in 4 steps, row by row
         const c = uq >= 1 && p.t.frame ? C.ink : p.f.c;
@@ -536,7 +533,6 @@
       phoneA = INLINE ? 0 : 1;
     } else if (state === 'D') {
       const pD = (y - G.D0) / (G.D1 - G.D0);
-      soft = Math.sin(Math.PI * clamp(pD)) * .8;                      // soft in flight, sharp when it lands in the T
       phoneA = INLINE ? 0 : 1 - clamp(pD / .06);
       P.forEach(p => {
         if (!p.show) return;
@@ -546,8 +542,6 @@
       });
     }
     cx.globalAlpha = 1;
-    const blur = Math.round(soft * 8) / 2;                            // up to 4 px, in half-pixel steps
-    if (blur !== lastBlur) { cv.style.filter = blur ? `blur(${blur}px)` : 'none'; lastBlur = blur; }
     if (!INLINE) {
       phone.style.opacity = phoneA;
       phone.style.visibility = phoneA > 0 ? 'visible' : 'hidden';

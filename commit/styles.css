@@ -219,8 +219,8 @@ ul, ol { list-style: none; }
 .phone--inline { position: relative; inset: auto; margin: 32px auto 0; right: auto; top: auto; opacity: 1; visibility: visible; pointer-events: auto; width: min(330px, 100%); height: 600px; }
 
 /* ── canvas, cursor trail, menu ───────────── */
-/* the pixels live behind the page: text stays sharp in front, the falling squares blur softly behind it */
-.fx { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; will-change: filter; }
+/* the pixels live behind the page; frosted glass panels blur them where text sits */
+.fx { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
 main { position: relative; z-index: 1; }
 .trail i { position: fixed; left: 0; top: 0; width: 12px; height: 12px; z-index: 90; pointer-events: none; opacity: 0; will-change: transform; }
 .trail.is-on i { opacity: 1; }
@@ -291,10 +291,20 @@ main { position: relative; z-index: 1; }
   .trail { display: none; }
 }
 
-/* 02: the problem is the one place the type gets big */
-.sec--problem .strip--top .strip__words { font-size: clamp(26px, 3.9vw, 60px); line-height: 1.05; letter-spacing: -.01em; padding-bottom: 28px; gap: .2em .5em; }
-.sec--problem .problems .block { font-size: clamp(14px, 1.15vw, 17px); line-height: 1.4; max-width: 360px; }
-@media (max-width: 899px) {
-  .sec--problem .strip--top .strip__words { justify-content: flex-start; font-size: clamp(30px, 9vw, 44px); }
+/* 02: big type on frosted glass; the pixel rain stays sharp around it and blurs behind it */
+.glass {
+  background: rgba(246, 246, 244, .38);
+  -webkit-backdrop-filter: blur(18px) saturate(1.5); backdrop-filter: blur(18px) saturate(1.5);
+  border: 1px solid rgba(255, 255, 255, .85);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .9), inset 0 -1px 0 rgba(0, 71, 255, .08), 0 12px 40px rgba(0, 71, 255, .10);
 }
-.sec--problem .strip--top { margin-top: 6vh; }
+.sec--problem .strip--top { margin-top: 6vh; padding: 30px 40px; border-radius: 32px; }
+.sec--problem .strip--top .hair { display: none; }
+.sec--problem .strip--top .strip__words { font-size: clamp(26px, 3.6vw, 56px); line-height: 1.05; letter-spacing: -.01em; padding: 0; gap: .2em .5em; }
+.sec--problem .problems { padding: 26px 48px; border-radius: 999px; gap: 40px; align-items: center; }
+.sec--problem .problems .block { font-size: clamp(14px, 1.1vw, 16px); line-height: 1.4; max-width: 340px; }
+@media (max-width: 899px) {
+  .sec--problem .strip--top { padding: 22px 20px; border-radius: 24px; }
+  .sec--problem .strip--top .strip__words { justify-content: flex-start; font-size: clamp(30px, 9vw, 44px); }
+  .sec--problem .problems { border-radius: 24px; padding: 22px 20px; gap: 16px; }
+}
