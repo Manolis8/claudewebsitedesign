@@ -290,3 +290,11 @@ main { position: relative; z-index: 1; }
   .sec--feed .sticky { position: relative; height: auto; }
   .trail { display: none; }
 }
+
+/* 02: the problem is the one place the type gets big */
+.sec--problem .strip--top .strip__words { font-size: clamp(26px, 3.9vw, 60px); line-height: 1.05; letter-spacing: -.01em; padding-bottom: 28px; gap: .2em .5em; }
+.sec--problem .problems .block { font-size: clamp(14px, 1.15vw, 17px); line-height: 1.4; max-width: 360px; }
+@media (max-width: 899px) {
+  .sec--problem .strip--top .strip__words { justify-content: flex-start; font-size: clamp(30px, 9vw, 44px); }
+}
+.sec--problem .strip--top { margin-top: 6vh; }
